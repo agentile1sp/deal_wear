@@ -1,6 +1,7 @@
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include  # <--- importamos include
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('admin/', admin.site.urls),
+    path('', include('main.urls')),  # <--- conectamos las rutas de la app "main"
 ]
